@@ -1,10 +1,10 @@
 import { GetterTree } from 'vuex';
 import { IWaterfallState } from './types';
-import { storeNames } from './names';
+import { gettersNames } from './names';
 import { IRootState } from '../../tools/general.types';
 
 const getters: GetterTree<IWaterfallState, IRootState> = {
-    [storeNames.getWaterfall](state): boolean {
+    [gettersNames.getWaterfall](state): boolean {
         return state.isWaterfall;
     },
 };

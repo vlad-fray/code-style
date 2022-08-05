@@ -1,11 +1,11 @@
 import { ActionTree } from 'vuex';
 import { IWaterfallState } from './types';
-import { storeNames } from './names';
+import { actionsNames, mutationsNames } from './names';
 import { IRootState } from '../../tools/general.types';
 
 const actions: ActionTree<IWaterfallState, IRootState> = {
-    [storeNames.loadWaterfall]({ commit }): void {
-        commit(storeNames.SET_WATERFALL);
+    [actionsNames.loadWaterfall]({ commit }): void {
+        commit(mutationsNames.SET_WATERFALL);
     },
 };
 

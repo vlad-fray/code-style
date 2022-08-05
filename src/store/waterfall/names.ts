@@ -1,31 +1,35 @@
-import { addModuleNames } from '../../tools/addModuleNames';
+import { addModuleName } from '../../tools/addModuleNames';
 
 const MODULE_NAME = 'waterfall';
 
-const actionsNames = {
-    loadWaterfall: 'loadWaterfall',
+enum actionsNames {
+    loadWaterfall = 'loadWaterfall',
 };
 
-const mutationsNames = {
-    SET_WATERFALL: 'SET_WATERFALL',
+enum mutationsNames {
+    SET_WATERFALL = 'SET_WATERFALL',
 };
 
-const gettersNames = {
-    getWaterfall: 'getWaterfall',
+enum gettersNames {
+    getWaterfall = 'getWaterfall',
 };
 
-const storeNames = {
-    ...actionsNames,
-    ...mutationsNames,
-    ...gettersNames,
+const waterfallActions = {
+    [actionsNames.loadWaterfall]: addModuleName(MODULE_NAME, actionsNames.loadWaterfall),
 };
 
-const waterfallActions = addModuleNames(MODULE_NAME, actionsNames);
-const waterfallGetters = addModuleNames(MODULE_NAME, mutationsNames);
-const waterfallMutations = addModuleNames(MODULE_NAME, gettersNames);
+const waterfallGetters = {
+    [gettersNames.getWaterfall]: addModuleName(MODULE_NAME, gettersNames.getWaterfall),
+};
+
+const waterfallMutations = {
+    [mutationsNames.SET_WATERFALL]: addModuleName(MODULE_NAME, mutationsNames.SET_WATERFALL),
+};
 
 export {
-    storeNames,
+    actionsNames,
+    mutationsNames,
+    gettersNames,
     waterfallActions,
     waterfallGetters,
     waterfallMutations,
