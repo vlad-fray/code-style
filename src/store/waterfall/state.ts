@@ -4,7 +4,7 @@ import { mutations } from './mutations';
 import { getters } from './getters';
 
 import { IWaterfallState } from './types';
-import { IRootState } from '../../tools/commonTypes';
+import { IRootState } from '../../tools/general.types';
 
 const state: IWaterfallState = {
     isWaterfall: false,
